@@ -10,11 +10,10 @@
     <meta name="description" content="">
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400italic,500,700">
-    <link rel="stylesheet" href="{{ asset('admin/css/vendor.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('admin/css/elephant.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('admin/css/application.min.css') }}">
-    {{-- <link rel="stylesheet" href="{{ asset('admin/css/demo.min.css') }}"> --}}
-    <link rel="stylesheet" href="{{ asset('admin/css/contacts.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin-panel/css/vendor.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin-panel/css/elephant.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin-panel/css/application.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin-panel/css/contacts.min.css') }}">
   </head>
   <body class="layout layout-header-fixed">
     <div class="layout-header">
@@ -36,7 +35,7 @@
             <span class="sr-only">Toggle navigation</span>
             <span class="arrow-up"></span>
             <span class="ellipsis ellipsis-vertical">
-              <img class="ellipsis-object" width="32" height="32" src="{{ asset('admin/img/0180441436.jpg') }}" alt="{{ Auth::user()->name }}">
+              <img class="ellipsis-object" width="32" height="32" src="{{ asset('admin-panel/img/0180441436.jpg') }}" alt="{{ Auth::user()->name }}">
             </span>
           </button>
         </div>
@@ -59,7 +58,7 @@
               </li>
               <li class="dropdown hidden-xs">
                 <button class="navbar-account-btn" data-toggle="dropdown" aria-haspopup="true">
-                  <img class="circle" width="36" height="36" src="{{ asset('admin/img/0180441436.jpg') }}" alt="{{ Auth::user()->name }}"> {{ Auth::user()->name }}
+                  <img class="circle" width="36" height="36" src="{{ asset('admin-panel/img/0180441436.jpg') }}" alt="{{ Auth::user()->name }}"> {{ Auth::user()->name }}
                   <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu dropdown-menu-right">
@@ -142,9 +141,9 @@
         </div>
       </div>
     </div>
-    <script src="{{ asset('admin/js/vendor.min.js') }}"></script>
-    <script src="{{ asset('admin/js/elephant.min.js') }}"></script>
-    <script src="{{ asset('admin/js/application.min.js') }}"></script>
-    <script src="{{ asset('admin/js/demo.min.js') }}"></script>
+    <script src="{{ asset('admin-panel/js/vendor.min.js') }}"></script>
+    <script src="{{ asset('admin-panel/js/elephant.min.js') }}"></script>
+    <script src="{{ asset('admin-panel/js/application.min.js') }}"></script>
+    <script src="{{ asset('admin-panel/js/demo.min.js') }}"></script>
   </body>
 </html>

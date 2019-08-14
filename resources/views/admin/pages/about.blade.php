@@ -142,6 +142,41 @@
                     </div>
                 </form>
             </div>
-        </div>        
+        </div>
+        
+        {{-- CV part --}}
+        <div class="card">
+            <div class="card-header bg-primary">
+                <strong>CV</strong>
+            </div>
+
+            <div class="card-body">
+                <div class="alert {{ $about['cv'] !== null ? 'alert-success' : 'alert-danger' }}">
+                    {{ $about['cv'] !== null ? 'CV is uploaded.' : 'CV is not uploaded.' }}
+                </div>
+                
+                <form class="form" method="POST" action="{{ route('admin.cv.upload') }}" enctype="multipart/form-data">
+                    @csrf
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input class="form-control" type="text" placeholder="No file chosen">
+                            <span class="input-group-btn">
+                                <label class="btn btn-primary file-upload-btn">
+                                <input id="cv" class="file-upload-input" type="file" name="cv">
+                                <span class="icon icon-paperclip icon-lg"></span>
+                                </label>
+                            </span>
+                        </div>
+                        <p class="help-block">
+                            <small>Click the button next to the input field and upload a new CV.</small>
+                        </p>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary btn-block" type="submit">Upload new</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
+    
 @endsection

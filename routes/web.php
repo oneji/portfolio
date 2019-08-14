@@ -35,4 +35,7 @@ Route::prefix('admina')->namespace('Admin')->middleware(['auth'])->group(functio
     Route::post('/skills', 'SkillController@save')->name('admin.skills.save');
     Route::delete('/skills/{id}', 'SkillController@delete')->name('admin.skills.delete');
 
+    Route::post('/cv', 'AboutController@uploadCV')->name('admin.cv.upload');
+    Route::get('/cv', 'AboutController@downloadCV')->name('admin.cv.download');
+
 });

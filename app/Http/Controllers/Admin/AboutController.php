@@ -52,4 +52,36 @@ class AboutController extends Controller
 
         return redirect()->route('admin.about');
     }
+
+    public function uploadCV(Request $request)
+    {
+        $about = About::first();
+        if($about !== null) {
+
+            if($request->hasFile('cv')) {
+                Storage::disk('my_files')->delete($about->cv);
+                
+                $path = $request->cv->storeAs(
+                    'uploads', 
+                    'CV_Kamilov_Temur.'.$request->cv->getClientOriginalExtension(), 
+                    ['disk' => 'my_files']
+                );
+
+
+                $about->cv = $path;
+                $about->save();
+
+                return redirect()->route('admin.about');
+            } else {
+
+            }
+        }
+    }
+
+    public function downloadCV()
+    {
+        $about = About::first();
+
+        return Storage::disk('my_files')->download($about->cv);        
+    }
 }

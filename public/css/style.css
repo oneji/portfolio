@@ -378,6 +378,21 @@ select option,
   padding: .7rem 2rem;
   transition: .4s ease-in-out;
 }
+.skill-item {
+  background-image: linear-gradient(to right, #0081ff 0%, #0045ff 100%);
+  background-size: 200% auto;
+  border-radius: 10rem;
+  border: 0;
+  box-shadow: 0 24px 40px rgba(0, 69, 255, 0.2), 0 8px 16px rgba(0, 69, 255, 0.15);
+  color: #fff;
+  cursor: pointer;
+  font-size: .937rem;
+  font-weight: 400;
+  line-height: inherit;
+  white-space: nowrap;
+  padding: .7rem 2rem;
+  transition: .4s ease-in-out;
+}
 .btn:hover {
   color: #fff;
   box-shadow: none;
@@ -401,6 +416,10 @@ select option,
   background-size: 200% auto;
   background-image: linear-gradient(to right, #0081ff 0%, #3fa0ff 50%, #0045ff 100%);
   transition: .4s ease-in-out;
+}
+.skill-item {
+  padding: 5px 15px;
+  margin-bottom: 5px;
 }
 .btn--blue-gradient:hover {
   background-position: right center;

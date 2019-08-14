@@ -6,13 +6,15 @@ use App\About;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
+use App\Skill;
 
 class AboutController extends Controller
 {
     public function get() 
     {
         $about = About::first();
-        return view('admin.pages.about', [ 'about' => $about ]);
+        $skills = Skill::all();
+        return view('admin.pages.about', [ 'about' => $about, 'skills' => $skills ]);
     }
 
     public function save(Request $request)

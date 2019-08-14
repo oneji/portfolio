@@ -31,4 +31,8 @@ Route::prefix('admina')->namespace('Admin')->middleware(['auth'])->group(functio
     Route::post('/experience', 'ExperiencesController@save')->name('admin.experience.save');
     Route::delete('/experience/{id}', 'ExperiencesController@delete')->name('admin.experience.delete');
 
+    Route::get('/skills', 'SkillController@get')->name('admin.skills');
+    Route::post('/skills', 'SkillController@save')->name('admin.skills.save');
+    Route::delete('/skills/{id}', 'SkillController@delete')->name('admin.skills.delete');
+
 });

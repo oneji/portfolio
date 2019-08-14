@@ -9,6 +9,7 @@
         </div>
     @endif
 
+    {{-- Personal information part --}}
     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
         <div class="card">
             <div class="card-header bg-primary">
@@ -106,7 +107,41 @@
                     </div>
                 </form>
             </div>
-        </div>
-        
+        </div>        
+    </div>
+    {{-- Skills part --}}
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+        <div class="card">
+            <div class="card-header bg-primary">
+                <strong>Skills</strong>
+            </div>
+
+            <div class="card-body">
+                <div class="skills-list">
+                    @foreach ($skills as $skill)
+                        <div class="skill-item">
+                            <form method="POST" action="{{ route('admin.skills.delete', $skill['id']) }}">
+                                @csrf
+                                @method('delete')
+                                <button class="skill-item__remove">×</button> {{ $skill['skill_name'] }}
+                            </form>
+                            
+                        </div>                        
+                    @endforeach
+                    <div class="clearfix"></div>
+                </div>
+                
+                <form class="form" method="POST" action="{{ route('admin.skills.save') }}" data-toggle="validation">
+                    @csrf
+                    <div class="form-group">
+                        <label for="skill_name">Skill name</label>
+                        <input name="skill_name" id="skill_name" class="form-control" type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary btn-block" type="submit">Add</button>
+                    </div>
+                </form>
+            </div>
+        </div>        
     </div>
 @endsection

@@ -34,8 +34,9 @@
                     <i class="font-icon icon-envelope"></i>{{ $about['wechat'] }}
                 </li>
             </ul>
-            
-            <a class="btn btn--blue-gradient" href="#"><i class="font-icon icon-download"></i> Download CV</a>
+            @if ($about['cv'] !== null)
+                <a class="btn btn--blue-gradient" href="#"><i class="font-icon icon-download"></i> Download CV</a>
+            @endif
         </div>
     </div>	
 </aside>

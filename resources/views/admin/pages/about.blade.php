@@ -28,7 +28,7 @@
                             @if ($about['photo'] === null)
                                 <img class="img-rounded" width="128" height="128" src="/admin-panel/img/3002121059.jpg" alt="No photo">
                             @else
-                                <img class="img-rounded" width="128" height="128" src="{{ '/'.$about['photo'] }}" alt="Photo">                
+                                <img class="img-rounded" width="128" height="128" src="{{ asset($about['photo']) }}" alt="Photo">                
                             @endif
                         </div>
                         <div class="contact-info">

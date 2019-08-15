@@ -1,7 +1,7 @@
 <!-- Sidebar -->
 <aside class="col-12 col-md-12 col-xl-3">
     <div class="sidebar box pb-0 sticky-column">
-        <img class="avatar avatar--180" src="{{ '/'.$about['photo'] }}" alt="Photo">
+        <img class="avatar avatar--180" src="{{ asset($about['photo']) }}" alt="Photo">
         <div class="text-center">
             <h3 class="title title--h3 sidebar__user-name"><span class="weight--500">{{ $about['first_name'] }}</span> {{ $about['last_name'] }}</h3>
             <div class="badge badge--gray">{{ $about['dev_status'] }}</div>

@@ -26,9 +26,9 @@
                             <input name="photo" id="photo" class="file-upload-input" type="file">
                             </label>
                             @if ($about['photo'] === null)
-                                <img class="img-rounded" width="128" height="128" src="{{ asset('admin/img/3002121059.jpg') }}" alt="No photo">
+                                <img class="img-rounded" width="128" height="128" src="/admin-panel/img/3002121059.jpg" alt="No photo">
                             @else
-                                <img class="img-rounded" width="128" height="128" src="{{ asset($about['photo']) }}" alt="Abbey Robinson">                
+                                <img class="img-rounded" width="128" height="128" src="{{ '/'.$about['photo'] }}" alt="Photo">                
                             @endif
                         </div>
                         <div class="contact-info">

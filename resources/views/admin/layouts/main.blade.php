@@ -35,7 +35,7 @@
             <span class="sr-only">Toggle navigation</span>
             <span class="arrow-up"></span>
             <span class="ellipsis ellipsis-vertical">
-              <img class="ellipsis-object" width="32" height="32" src="{{ asset('admin-panel/img/0180441436.jpg') }}" alt="{{ Auth::user()->name }}">
+              <img class="ellipsis-object" width="32" height="32" src="/admin-panel/img/0180441436.jpg" alt="{{ Auth::user()->name }}">
             </span>
           </button>
         </div>
@@ -58,7 +58,7 @@
               </li>
               <li class="dropdown hidden-xs">
                 <button class="navbar-account-btn" data-toggle="dropdown" aria-haspopup="true">
-                  <img class="circle" width="36" height="36" src="{{ asset('admin-panel/img/0180441436.jpg') }}" alt="{{ Auth::user()->name }}"> {{ Auth::user()->name }}
+                  <img class="circle" width="36" height="36" src="/admin-panel/img/0180441436.jpg" alt="{{ Auth::user()->name }}"> {{ Auth::user()->name }}
                   <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu dropdown-menu-right">
@@ -91,16 +91,7 @@
           <div class="custom-scrollbar">
             <nav id="sidenav" class="sidenav-collapse collapse">
               <ul class="sidenav level-1">
-                <li class="sidenav-search">
-                  <form class="sidenav-form" action="http://demo.madebytilde.com/">
-                    <div class="form-group form-group-sm">
-                      <div class="input-with-icon">
-                        <input class="form-control" type="text" placeholder="Search…">
-                        <span class="icon icon-search input-icon"></span>
-                      </div>
-                    </div>
-                  </form>
-                </li>
+                <li class="sidenav-heading">Menu</li>
                 <li class="sidenav-item">
                     <a href="{{ route('site.resume') }}">
                         <span class="sidenav-icon icon icon-home"></span>

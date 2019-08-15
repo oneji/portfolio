@@ -12,8 +12,6 @@ class ResumeController extends Controller
 {
     public function getResume()
     {
-        dd(request()->getScheme());
-        
         $about = About::first();
         $education = Education::getInfo();
         $experience = Experience::orderBy('id', 'desc')->get();

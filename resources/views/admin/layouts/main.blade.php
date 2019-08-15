@@ -10,10 +10,10 @@
     <meta name="description" content="">
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400italic,500,700">
-    <link rel="stylesheet" href="{{ asset('admin-panel/css/vendor.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('admin-panel/css/elephant.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('admin-panel/css/application.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('admin-panel/css/contacts.min.css') }}">
+    <link rel="stylesheet" href="/admin-panel/css/vendor.min.css">
+    <link rel="stylesheet" href="/admin-panel/css/elephant.min.css">
+    <link rel="stylesheet" href="/admin-panel/css/application.min.css">
+    <link rel="stylesheet" href="/admin-panel/css/contacts.min.css">
   </head>
   <body class="layout layout-header-fixed">
     <div class="layout-header">
@@ -141,9 +141,9 @@
         </div>
       </div>
     </div>
-    <script src="{{ asset('admin-panel/js/vendor.min.js') }}"></script>
-    <script src="{{ asset('admin-panel/js/elephant.min.js') }}"></script>
-    <script src="{{ asset('admin-panel/js/application.min.js') }}"></script>
-    <script src="{{ asset('admin-panel/js/demo.min.js') }}"></script>
+    <script src="/admin-panel/js/vendor.min.js"></script>
+    <script src="/admin-panel/js/elephant.min.js"></script>
+    <script src="/admin-panel/js/application.min.js"></script>
+    <script src="/admin-panel/js/demo.min.js"></script>
   </body>
 </html>

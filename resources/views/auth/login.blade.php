@@ -8,9 +8,9 @@
     <meta name="description" content="">
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400italic,500,700">
-    <link rel="stylesheet" href="{{ asset('admin/css/vendor.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('admin/css/elephant.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('admin/css/login-1.min.css') }}">
+    <link rel="stylesheet" href="/admin-panel/css/vendor.min.css">
+    <link rel="stylesheet" href="/admin-panel/css/elephant.min.css">
+    <link rel="stylesheet" href="/admin-panel/css/login-1.min.css">
 </head>
 <body>
     <div class="login">
@@ -41,7 +41,7 @@
             </ul>
         </div>
     </div>
-    <script src="{{ asset('admin/js/vendor.min.js') }}"></script>
-    <script src="{{ asset('admin/js/elephant.min.js') }}"></script>
+    <script src="/admin-panel/js/vendor.min.js"></script>
+    <script src="/admin-panel/js/elephant.min.js"></script>
   </body>
 </html>

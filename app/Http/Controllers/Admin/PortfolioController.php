@@ -43,6 +43,7 @@ class PortfolioController extends Controller
         $portfolioItem = new PortfolioItem($request->toArray());
         $portfolioItem->cover_image = $fileNameToStore;
         $portfolioItem->screenshots = json_encode($screenshotsNamesToStore);
+        $portfolioItem->slug = str_slug($request->title, '-');
         $portfolioItem->save();
         
         // Put the message in session

@@ -17,7 +17,7 @@ class CreatePortfolioItemsTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->string('subtitle');
-            $table->string('cover_image');
+            $table->string('cover_image')->nullable();
             $table->text('description')->nullable();
             $table->string('link')->nullable();
             $table->json('screenshots')->nullable();

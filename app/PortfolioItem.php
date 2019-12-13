@@ -20,4 +20,11 @@ class PortfolioItem extends Model
     ];
 
     public $timestamps = false;
+
+    public static function uploadScreenshots($screenshot)
+    {
+        $screenshotName = time().'.'.$screenshot->getClientOriginalExtension();
+        $screenshotName = $screenshot->store('uploads/portfolio-screenshots', ['disk' => 'my_files']);
+        return $screenshotName;
+    }
 }

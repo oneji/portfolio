@@ -28,16 +28,16 @@
                         @foreach ($portfolioItems as $portfolioItem)
                             <li class="media">
                                 <div class="media-middle media-left">
-                                    <a href="product.html">
+                                    <a href="{{ route('admin.portfolio.item', [ 'id' => $portfolioItem['id'] ]) }}">
                                         <img class="img-circle" width="48" height="48" src="{{ asset($portfolioItem['cover_image']) }}" alt="{{ $portfolioItem['title'] }}">
                                     </a>
                                 </div>
                                 <div class="media-middle media-body">
                                     <h5 class="media-heading">
-                                        <a href="#">{{ $portfolioItem['title'] }}</a>
-                                        <small>{{ $portfolioItem['link'] }}</small>
+                                        <a href="{{ route('admin.portfolio.item', [ 'id' => $portfolioItem['id'] ]) }}">{{ $portfolioItem['title'] }}</a>
+                                        <small>Edit item</small>
                                     </h5>
-                                    <small>{{ $portfolioItem['subtitle'] }}</small>
+                                    <small>{{ $portfolioItem['subtitle'] }} | {{ $portfolioItem['link'] }}</small>
                                 </div>
                             </li>
                         @endforeach

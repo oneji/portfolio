@@ -17,4 +17,15 @@ class PortfolioController extends Controller
             'portfolioItems' => $portfolioItems
         ]);
     }
+
+    public function getPortfolioItemBySlug($slug)
+    {
+        $portfolioItem = PortfolioItem::where('slug', $slug)->first();
+        $about = About::first();
+        
+        return view('site.pages.portfolio-item', [
+            'about' => $about,
+            'portfolioItem' => $portfolioItem
+        ]);
+    }
 }

@@ -18,6 +18,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/contact', 'ContactController@get')->name('site.contact');
 Route::post('/contact', 'ContactController@saveContactMessage')->name('site.contact.save');
 Route::get('/portfolio', 'PortfolioController@get')->name('site.portfolio');
+Route::get('/portfolio/{slug}', 'PortfolioController@getPortfolioItemBySlug')->name('site.portfolio.item');
 
 // Admin routes
 Route::prefix('admin')->namespace('Admin')->as('admin.')->middleware(['auth'])->group(function () {
@@ -46,4 +47,6 @@ Route::prefix('admin')->namespace('Admin')->as('admin.')->middleware(['auth'])->
 
     Route::get('/portfolio', 'PortfolioController@get')->name('portfolio');
     Route::post('/portfolio', 'PortfolioController@save')->name('portfolio.save');
+    Route::get('/portfolio/edit/{id}', 'PortfolioController@edit')->name('portfolio.item');
+    Route::post('/portfolio/edit/{id}', 'PortfolioController@update')->name('portfolio.edit');
 });

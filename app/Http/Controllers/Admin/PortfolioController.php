@@ -18,7 +18,16 @@ class PortfolioController extends Controller
 
     public function save(Request $request)
     {
-        // return $request;
+        $screenshotsNamesToStore = [];
+        if($request->hasFile('files')) {
+            $screenshots = $request->file('files');
+            foreach ($screenshots as $screenshot) {
+                $screenshotName = time().'.'.$screenshot->getClientOriginalExtension();
+                $screenshotName = $screenshot->store('uploads/portfolio-screenshots', ['disk' => 'my_files']);
+                $screenshotsNamesToStore[] = $screenshotName;
+            }
+        }
+
         $validatedData = $request->validate([
             'title' => 'required',
             'subtitle' => 'required',
@@ -26,13 +35,14 @@ class PortfolioController extends Controller
 
         if($request->hasFile('cover_image')) {            
             $fileNameToStore = time().'.'.$request->cover_image->getClientOriginalExtension();
-            $fileNameToStore = $request->cover_image->store('uploads', ['disk' => 'my_files']);
+            $fileNameToStore = $request->cover_image->store('uploads/portfolio', ['disk' => 'my_files']);
         } else {
             $fileNameToStore = null;
         }
 
         $portfolioItem = new PortfolioItem($request->toArray());
         $portfolioItem->cover_image = $fileNameToStore;
+        $portfolioItem->screenshots = json_encode($screenshotsNamesToStore);
         $portfolioItem->save();
         
         // Put the message in session

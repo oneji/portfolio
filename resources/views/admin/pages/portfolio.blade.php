@@ -1,47 +1,52 @@
 @extends('admin.layouts.main')
 
 @section('content')
-<div class="row gutter-xs">
-    <div class="col-md-4">
-        <div class="card">
-            <div class="card-header">
-                <div class="card-actions">
-                <button type="button" class="card-action card-toggler" title="Collapse"></button>
+    <div class="row gutter-xs">
+        @if (Session::has('success'))
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="alert alert-success">
+                    {{ Session::get('success') }}
                 </div>
-                <strong>Portfolio Items</strong>
             </div>
-            <div class="card-body">
-                <ul class="media-list">
-                    @if (count($portfolioItems) === 0)
-                        <li class="alert alert-success">
-                            No items added yet...
-                        </li>
-                    @endif
-                    
-                    @foreach ($portfolioItems as $portfolioItem)
-                        <li class="media">
-                            <div class="media-middle media-left">
-                                <a href="product.html">
-                                    <img class="img-circle" width="48" height="48" src="{{ asset($portfolioItem['cover_image']) }}" alt="{{ $portfolioItem['title'] }}">
-                                </a>
-                            </div>
-                            <div class="media-middle media-body">
-                                <h5 class="media-heading">
-                                    <a href="#">{{ $portfolioItem['title'] }}</a>
-                                    <small>{{ $portfolioItem['link'] }}</small>
-                                </h5>
-                                <small>{{ $portfolioItem['subtitle'] }}</small>
-                            </div>
-                        </li>
-                    @endforeach
-                    
-                    
-                </ul>
+        @endif
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-actions">
+                    <button type="button" class="card-action card-toggler" title="Collapse"></button>
+                    </div>
+                    <strong>Portfolio Items</strong>
+                </div>
+                <div class="card-body">
+                    <ul class="media-list">
+                        @if (count($portfolioItems) === 0)
+                            <li class="alert alert-success">
+                                No items added yet...
+                            </li>
+                        @endif
+                        
+                        @foreach ($portfolioItems as $portfolioItem)
+                            <li class="media">
+                                <div class="media-middle media-left">
+                                    <a href="product.html">
+                                        <img class="img-circle" width="48" height="48" src="{{ asset($portfolioItem['cover_image']) }}" alt="{{ $portfolioItem['title'] }}">
+                                    </a>
+                                </div>
+                                <div class="media-middle media-body">
+                                    <h5 class="media-heading">
+                                        <a href="#">{{ $portfolioItem['title'] }}</a>
+                                        <small>{{ $portfolioItem['link'] }}</small>
+                                    </h5>
+                                    <small>{{ $portfolioItem['subtitle'] }}</small>
+                                </div>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
             <div class="card">
                 <div class="card-header bg-primary">
                     <strong>Create a new portfolio item</strong>
@@ -66,7 +71,7 @@
                                 <input class="form-control" type="text" placeholder="Choose a cover image">
                                 <span class="input-group-btn">
                                     <label class="btn btn-primary file-upload-btn">
-                                    <input id="cover_image" class="file-upload-input" type="file" name="cover_image">
+                                    <input class="file-upload-input" accept="image/*" type="file" name="cover_image">
                                     <span class="icon icon-paperclip icon-lg"></span>
                                     </label>
                                 </span>
@@ -77,11 +82,17 @@
                             <textarea name="description" id="description" class="form-control" rows="5" placeholder="You can add a description here"></textarea>
                         </div>
                         <div class="form-group">
+                            <input type="file" accept="image/*" multiple="multiple" name="files[]">
+                        </div>
+                        <div class="form-group">
+                            <ul class="file-list"></ul>
+                        </div>
+                        <div class="form-group">
                             <button class="btn btn-primary btn-block" type="submit">Create</button>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
-</div>
+    </div>
 @endsection

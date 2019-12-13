@@ -19,6 +19,10 @@
     <div class="layout-header">
       <div class="navbar navbar-default">
         <div class="navbar-header">
+          <a href="{{ route('admin.home') }}" class="oneji-logo">
+            <img class="navbar-brand-logo" src="{{ asset('admin-panel/img/oneji-logo.svg') }}" alt="OneJI">
+          </a>
+         
           <button class="navbar-toggler visible-xs-block collapsed" type="button" data-toggle="collapse" data-target="#sidenav">
             <span class="sr-only">Toggle navigation</span>
             <span class="bars">
@@ -116,6 +120,18 @@
                     <span class="sidenav-label">Experience</span>
                   </a>
                 </li>
+                <li class="sidenav-item">
+                  <a href="{{ route('admin.contact') }}">
+                    <span class="sidenav-icon icon icon-comment"></span>
+                    <span class="sidenav-label">Contact messages</span>
+                  </a>
+                </li>
+                <li class="sidenav-item">
+                  <a href="{{ route('admin.portfolio') }}">
+                    <span class="sidenav-icon icon icon-archive"></span>
+                    <span class="sidenav-label">Portfolio</span>
+                  </a>
+                </li>
               </ul>
             </nav>
           </div>
@@ -128,7 +144,7 @@
       </div>
       <div class="layout-footer">
         <div class="layout-footer-body">
-          <small class="copyright">2019</small>
+          <small class="copyright">{{ now()->year }}</small>
         </div>
       </div>
     </div>

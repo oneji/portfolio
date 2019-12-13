@@ -2,11 +2,11 @@
 
 @section('content')
     @if (Session::has('success'))
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <div class="alert alert-success">
-            {{ Session::get('success') }}
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="alert alert-success">
+                {{ Session::get('success') }}
+            </div>
         </div>
-    </div>
     @endif
     {{-- Display erros if any --}}
     @if ($errors->any())

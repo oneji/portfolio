@@ -15,11 +15,14 @@ Auth::routes();
 // Web-site routes
 Route::get('/', 'ResumeController@getResume')->name('site.resume');
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/contact', 'ContactController@get')->name('site.contact');
+Route::post('/contact', 'ContactController@saveContactMessage')->name('site.contact.save');
+Route::get('/portfolio', 'PortfolioController@get')->name('site.portfolio');
 
 // Admin routes
 Route::prefix('admin')->namespace('Admin')->as('admin.')->middleware(['auth'])->group(function () {
 
-    Route::get('/', 'HomeController@get');
+    Route::get('/', 'HomeController@get')->name('home');
     Route::get('/about', 'AboutController@get')->name('about');
     Route::post('/about', 'AboutController@save')->name('about.save');
 
@@ -38,4 +41,9 @@ Route::prefix('admin')->namespace('Admin')->as('admin.')->middleware(['auth'])->
     Route::post('/cv', 'AboutController@uploadCV')->name('cv.upload');
     Route::get('/cv', 'AboutController@downloadCV')->name('cv.download');
 
+    Route::get('/contact', 'ContactMessageController@get')->name('contact');
+    Route::delete('/contact/{id}', 'ContactMessageController@deleteMessage')->name('contact.delete');
+
+    Route::get('/portfolio', 'PortfolioController@get')->name('portfolio');
+    Route::post('/portfolio', 'PortfolioController@save')->name('portfolio.save');
 });

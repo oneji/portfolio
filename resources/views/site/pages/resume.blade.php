@@ -19,7 +19,7 @@
                             <h1 class="title title--h1 title__separate">Resume</h1>
                         </div>
                         
-                        <!-- Experience -->
+                        <!-- Education -->
                         <div class="pb-0">
                             <div class="row">
                                 <div class="col-12 col-lg-6">
@@ -91,7 +91,7 @@
                     </div>
                     
                     <!-- Footer -->
-                    <footer class="footer">© 2019</footer>
+                    <footer class="footer">© {{ now()->year }}</footer>
                 </div>
             </div>
         </div>

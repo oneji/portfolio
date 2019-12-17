@@ -20,7 +20,7 @@ class CreatePortfolioItemsTable extends Migration
             $table->string('cover_image')->nullable();
             $table->text('description')->nullable();
             $table->string('link')->nullable();
-            $table->json('screenshots')->nullable();
+            $table->string('screenshots')->nullable();
         });
     }
 

@@ -49,4 +49,5 @@ Route::prefix('admin')->namespace('Admin')->as('admin.')->middleware(['auth'])->
     Route::post('/portfolio', 'PortfolioController@save')->name('portfolio.save');
     Route::get('/portfolio/edit/{id}', 'PortfolioController@edit')->name('portfolio.item');
     Route::post('/portfolio/edit/{id}', 'PortfolioController@update')->name('portfolio.edit');
+    Route::delete('/portfolio/edit/{id}/deleteScreenshot/{screenshotId}', 'PortfolioController@deleteScreenshot')->name('portfolio.deleteScreenshot');
 });

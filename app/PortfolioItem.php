@@ -25,6 +25,9 @@ class PortfolioItem extends Model
     {
         $screenshotName = time().'.'.$screenshot->getClientOriginalExtension();
         $screenshotName = $screenshot->store('uploads/portfolio-screenshots', ['disk' => 'my_files']);
-        return $screenshotName;
+        return [
+            'id' => uniqid(''),
+            'link' => $screenshotName
+        ];
     }
 }

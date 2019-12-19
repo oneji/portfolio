@@ -28,7 +28,7 @@
                             <div class="gallery-post">
                                 @if($portfolioItem['screenshots'] !== null)
                                     @foreach (json_decode($portfolioItem['screenshots']) as $screenshot)
-                                        <img class="gallery-post__item cover lazyload" src="{{ asset($screenshot) }}" data-zoom alt="" />
+                                        <img class="gallery-post__item cover lazyload" src="{{ asset($screenshot->link) }}" data-zoom alt="" />
                                     @endforeach                                    
                                 @endif
                             </div>

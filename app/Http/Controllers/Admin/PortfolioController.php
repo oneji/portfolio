@@ -110,4 +110,27 @@ class PortfolioController extends Controller
 
         return redirect()->route('admin.portfolio.item', [ 'id' => $portfolioItem['id'] ]);
     }
+
+    public function deleteScreenshot($id, $screenshotId, Request $request)
+    {
+        $portfolioItem = PortfolioItem::find($id);
+        $portfolioItemScreenshots = json_decode($portfolioItem['screenshots']);
+
+        foreach($portfolioItemScreenshots as $index => $screenshot) {
+            if($screenshot->id === $screenshotId) {
+                // Delete screenshot from a folder
+                Storage::disk('my_files')->delete($screenshot->link);
+                // Delete screenshot from DB
+                unset($portfolioItemScreenshots[$index]);
+            }
+        }
+
+        $portfolioItem['screenshots'] = json_encode($portfolioItemScreenshots);
+        $portfolioItem->save();
+
+        // Put the message in session
+        $request->session()->flash('success', 'Screenshot has been successfully deleted.');
+
+        return redirect()->route('admin.portfolio.item', [ 'id' => $id ]);
+    }
 }

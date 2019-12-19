@@ -47,12 +47,20 @@
                         <ul class="file-list">
                             @foreach(json_decode($portfolioItem['screenshots']) as $screenshot)
                                 <li class="file">
-                                    <a class="file-link" href="{{ asset($screenshot) }}">
-                                        <div class="file-thumbnail" style="background-image: url({{ asset($screenshot) }})"></div>
+                                    <a class="file-link" href="{{ asset($screenshot->link) }}">
+                                        <div class="file-thumbnail" style="background-image: url({{ asset($screenshot->link) }})"></div>
                                     </a>
-                                    <button class="file-delete-btn delete" title="Delete" type="button">
-                                        <span class="icon icon-remove"></span>
-                                    </button>
+                                    <form 
+                                        action="{{ route('admin.portfolio.deleteScreenshot', [ 'id' => $portfolioItem['id'], 'screenshotId' => $screenshot->id ]) }}" 
+                                        method="POST"
+                                    >
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="file-delete-btn delete" title="Delete" type="submit">
+                                            <span class="icon icon-remove"></span>
+                                        </button>
+                                    
+                                    </form>
                                 </li>                            
                             @endforeach                            
                         </ul>

@@ -20,9 +20,7 @@
                             </a>
                         </div>
                         <div class="media-middle media-body">
-                            <a class="link-muted" href="#">
-                                <strong>{{ $portfolioItem['title'] }}</strong>
-                            </a>
+                            <strong>{{ $portfolioItem['title'] }}</strong>
                         </div>
                     </div>
                 </div>
@@ -30,15 +28,13 @@
                     <img class="img-responsive" src="{{ asset($portfolioItem['cover_image']) }}" alt="{{ $portfolioItem['title'] }}">
                 </div>
                 <div class="card-body">
-                    <h4 class="card-title fw-l">
-                        <a class="link-muted" href="#">{{ $portfolioItem['subtitle'] }}</a>
-                    </h4>
+                    <h4 class="card-title fw-l">{{ $portfolioItem['subtitle'] }}</h4>
                     <small>{{ $portfolioItem['description'] }}</small>
                 </div>
                 <div class="card-footer">
                     <small>
                         <span class="icon icon-globe"></span>
-                        {{ $portfolioItem['link'] }}
+                        <a href="{{ $portfolioItem['link'] }}" target="_blank">{{ $portfolioItem['link'] }}</a>
                     </small>
                 </div>
                 <div class="card-footer">

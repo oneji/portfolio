@@ -34,8 +34,18 @@
                                 </div>
                                 <div class="media-middle media-body">
                                     <h5 class="media-heading">
-                                        <a href="{{ route('admin.portfolio.item', [ 'id' => $portfolioItem['id'] ]) }}">{{ $portfolioItem['title'] }}</a>
-                                        <small>Edit item</small>
+                                        {{ $portfolioItem['title'] }}
+                                        <small><a href="{{ route('admin.portfolio.item', [ 'id' => $portfolioItem['id'] ]) }}">Edit item</a></small>
+                                        <form style="float: right" id="delete-form" action="{{ route('admin.portfolio.delete', [ 'id' => $portfolioItem['id'] ]) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')                                            
+                                            <a 
+                                                href="javascript:{}" 
+                                                onclick="document.getElementById('delete-form').submit();"
+                                            >
+                                                Delete item
+                                            </a>
+                                        </form>
                                     </h5>
                                     <small>{{ $portfolioItem['subtitle'] }} | {{ $portfolioItem['link'] }}</small>
                                 </div>

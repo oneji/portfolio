@@ -133,4 +133,21 @@ class PortfolioController extends Controller
 
         return redirect()->route('admin.portfolio.item', [ 'id' => $id ]);
     }
+
+    public function deleteItem($id, Request $request)
+    {
+        $portfolioItem = PortfolioItem::find($id);
+
+        // Delete cover image and screenshots
+        Storage::disk('my_files')->delete($portfolioItem['cover_image']);
+        foreach (json_decode($portfolioItem['screenshots']) as $screenshot) {
+            Storage::disk('my_files')->delete($screenshot->link);
+        }
+
+        $portfolioItem->delete();
+        // Put the message in session
+        $request->session()->flash('success', 'Portfolio item has been successfully deleted.');
+
+        return redirect()->route('admin.portfolio');
+    }
 }

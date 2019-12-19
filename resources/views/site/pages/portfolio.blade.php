@@ -25,7 +25,6 @@
 								<!-- Post -->
 								<article class="news-item box">
 									<div class="news-item__image-wrap overlay overlay--45">
-										<div class="news-item__date">Sep 16, 2019</div>
 										<a class="news-item__link" href="{{ route('site.portfolio.item', [ 'slug' =>  $portfolioItem['slug'] ]) }}"></a>
 										<img class="cover lazyload" src="{{ asset($portfolioItem['cover_image']) }}" alt="" />
 									</div>

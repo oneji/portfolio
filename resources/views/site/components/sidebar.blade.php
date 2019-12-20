@@ -35,7 +35,7 @@
                 </li>
             </ul>
             @if ($about['cv'] !== null)
-                <a href="{{ route('admin.cv.download') }}" class="btn btn--blue-gradient" href="#"><i class="font-icon icon-download"></i> Download CV</a>
+                <a href="{{ $about['cv'] }}" target="_blank" class="btn btn--blue-gradient"><i class="font-icon icon-download"></i> Open CV</a>
             @endif
         </div>
     </div>	

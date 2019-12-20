@@ -24,10 +24,10 @@ class PortfolioItem extends Model
     public static function uploadScreenshots($screenshot)
     {
         $screenshotName = time().'.'.$screenshot->getClientOriginalExtension();
-        $screenshotName = $screenshot->store('uploads/portfolio-screenshots', ['disk' => 'my_files']);
+        $screenshotName = $screenshot->store('portfolio-screenshots', 's3');
         return [
             'id' => uniqid(''),
-            'link' => $screenshotName
+            'link' => env('AWS_URL').'/'.$screenshotName
         ];
     }
 }

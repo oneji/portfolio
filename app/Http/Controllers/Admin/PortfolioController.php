@@ -36,13 +36,13 @@ class PortfolioController extends Controller
 
         if($request->hasFile('cover_image')) {            
             $fileNameToStore = time().'.'.$request->cover_image->getClientOriginalExtension();
-            $fileNameToStore = $request->cover_image->store('uploads/portfolio', ['disk' => 'my_files']);
+            $fileNameToStore = $request->cover_image->store('portfolio', 's3');
         } else {
             $fileNameToStore = null;
         }
 
         $portfolioItem = new PortfolioItem($request->toArray());
-        $portfolioItem->cover_image = $fileNameToStore;
+        $portfolioItem->cover_image = env('AWS_URL').'/'.$fileNameToStore;
         $portfolioItem->screenshots = json_encode($screenshotsNamesToStore);
         $portfolioItem->slug = str_slug($request->title, '-');
         $portfolioItem->save();
@@ -119,7 +119,7 @@ class PortfolioController extends Controller
         foreach($portfolioItemScreenshots as $index => $screenshot) {
             if($screenshot->id === $screenshotId) {
                 // Delete screenshot from a folder
-                Storage::disk('my_files')->delete($screenshot->link);
+                Storage::disk('s3')->delete($screenshot->link);
                 // Delete screenshot from DB
                 unset($portfolioItemScreenshots[$index]);
             }

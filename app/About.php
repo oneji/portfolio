@@ -31,8 +31,8 @@ class About extends Model
     public static function uploadPhoto($photo)
     {
         $fileNameToStore = time().'.'.$photo->getClientOriginalExtension();
-        $fileNameToStore = $photo->store('uploads', ['disk' => 'my_files']);
+        $fileNameToStore = $photo->store('about-files', 's3');
 
-        return $fileNameToStore;
+        return env('AWS_URL').'/'.$fileNameToStore;
     }
 }

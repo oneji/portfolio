@@ -62,13 +62,13 @@ class AboutController extends Controller
                 Storage::disk('my_files')->delete($about->cv);
                 
                 $path = $request->cv->storeAs(
-                    'uploads', 
+                    'about-files', 
                     'CV_Kamilov_Temur.'.$request->cv->getClientOriginalExtension(), 
-                    ['disk' => 'my_files']
+                    ['disk' => 's3']
                 );
 
 
-                $about->cv = $path;
+                $about->cv = env('AWS_URL').'/'.$path;
                 $about->save();
 
                 return redirect()->route('admin.about');

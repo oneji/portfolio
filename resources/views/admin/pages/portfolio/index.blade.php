@@ -35,13 +35,13 @@
                                 <div class="media-middle media-body">
                                     <h5 class="media-heading">
                                         {{ $portfolioItem['title'] }}
-                                        <form style="float: right" id="delete-form" action="{{ route('admin.portfolio.delete', [ 'id' => $portfolioItem['id'] ]) }}" method="POST">
+                                        <form style="float: right" id="delete-form-{{ $portfolioItem['id'] }}" action="{{ route('admin.portfolio.delete', [ 'id' => $portfolioItem['id'] ]) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <a href="{{ route('admin.portfolio.item', [ 'id' => $portfolioItem['id'] ]) }}">Edit</a>                                            
                                             <a 
                                                 href="javascript:{}" 
-                                                onclick="document.getElementById('delete-form').submit();"
+                                                onclick="document.getElementById('delete-form-{{ $portfolioItem['id'] }}').submit();"
                                             >
                                                 Delete
                                             </a>

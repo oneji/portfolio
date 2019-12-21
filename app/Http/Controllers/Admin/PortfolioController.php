@@ -26,6 +26,8 @@ class PortfolioController extends Controller
             foreach ($screenshots as $screenshot) {
                 $screenshotsNamesToStore[] = PortfolioItem::uploadScreenshots($screenshot);
             }
+        } else {
+            $screenshotsNamesToStore = null;
         }
         
         // Validate input data
@@ -43,7 +45,7 @@ class PortfolioController extends Controller
 
         $portfolioItem = new PortfolioItem($request->toArray());
         $portfolioItem->cover_image = env('AWS_URL').'/'.$fileNameToStore;
-        $portfolioItem->screenshots = json_encode($screenshotsNamesToStore);
+        
         $portfolioItem->slug = str_slug($request->title, '-');
         $portfolioItem->save();
         
@@ -137,13 +139,16 @@ class PortfolioController extends Controller
     public function deleteItem($id, Request $request)
     {
         $portfolioItem = PortfolioItem::find($id);
+        $portfolioItemScreenshots = json_decode($portfolioItem['screenshots']);  
 
         // Delete cover image and screenshots
         Storage::disk('my_files')->delete($portfolioItem['cover_image']);
-        foreach (json_decode($portfolioItem['screenshots']) as $screenshot) {
-            Storage::disk('my_files')->delete($screenshot->link);
+        if($portfolioItemScreenshots !== null) {
+            foreach ($portfolioItemScreenshots as $screenshot) {
+                Storage::disk('my_files')->delete($screenshot->link);
+            }
         }
-
+        
         $portfolioItem->delete();
         // Put the message in session
         $request->session()->flash('success', 'Portfolio item has been successfully deleted.');

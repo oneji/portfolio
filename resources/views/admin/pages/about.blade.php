@@ -85,10 +85,28 @@
                                     <input name="wechat" id="wechat" class="form-control" type="text" value="{{ $about['wechat'] }}">
                                 </div>
                             </div>
-                            <div class="col-md-12">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="dev_status">Dev status</label>
                                     <input name="dev_status" id="dev_status" class="form-control" type="text" value="{{ $about['dev_status'] }}">
+                                </div>
+                            </div>                            
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="facebook">Facebook link</label>
+                                    <input name="facebook" id="facebook" class="form-control" type="text" value="{{ $about['facebook'] }}">
+                                </div>
+                            </div>                            
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="linkedin">LinkedIn link</label>
+                                    <input name="linkedin" id="linkedin" class="form-control" type="text" value="{{ $about['linkedin'] }}">
+                                </div>
+                            </div>                            
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="github">Github link</label>
+                                    <input name="github" id="github" class="form-control" type="text" value="{{ $about['github'] }}">
                                 </div>
                             </div>                            
                             <div class="col-md-12">

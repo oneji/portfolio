@@ -8,8 +8,9 @@
             
             <!-- Social -->
             <div class="social">
-                <a class="social__link" href="https://www.facebook.com/"><i class="font-icon icon-facebook"></i></a>
-                <a class="social__link" href="https://www.linkedin.com/"><i class="font-icon icon-linkedin2"></i></a>
+                <a class="social__link" href="{{ $about['facebook'] }}" target="_blank"><i class="font-icon icon-facebook"></i></a>
+                <a class="social__link" href="{{ $about['linkedin'] }}" target="_blank"><i class="font-icon icon-linkedin2"></i></a>
+                <a class="social__link" href="{{ $about['github'] }}" target="_blank"><i class="font-icon icon-github"></i></a>
             </div>
         </div>
         

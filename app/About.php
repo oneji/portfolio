@@ -25,7 +25,10 @@ class About extends Model
         'description',
         'photo',
         'cv',
-        'dev_status'
+        'dev_status',
+        'facebook',
+        'linkedin',
+        'github'
     ];
 
     public static function uploadPhoto($photo)

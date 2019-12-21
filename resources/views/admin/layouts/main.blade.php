@@ -66,14 +66,24 @@
                   <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu dropdown-menu-right">
-                  <li><a href="login-1.html">Sign out</a></li>
+                  <li>
+                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Sign out</a>
+                  </li>
                 </ul>
               </li>
               <li class="visible-xs-block">
-                <a href="login-1.html">
+                {{-- <a href="login-1.html">
                   <span class="icon icon-power-off icon-lg icon-fw"></span>
                   Sign out
+                </a> --}}
+                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    <span class="icon icon-power-off icon-lg icon-fw"></span>
+                    Sign out
                 </a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
               </li>
             </ul>
             <div class="title-bar">

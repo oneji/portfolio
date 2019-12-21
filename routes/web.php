@@ -13,11 +13,12 @@
 
 Auth::routes();
 // Web-site routes
-Route::get('/', 'ResumeController@getResume')->name('site.resume');
-Route::get('/contact', 'ContactController@get')->name('site.contact');
-Route::post('/contact', 'ContactController@saveContactMessage')->name('site.contact.save');
+Route::get('/', 'AboutController@get')->name('site.home');
+Route::get('/resume', 'ResumeController@getResume')->name('site.resume');
 Route::get('/portfolio', 'PortfolioController@get')->name('site.portfolio');
 Route::get('/portfolio/{slug}', 'PortfolioController@getPortfolioItemBySlug')->name('site.portfolio.item');
+Route::get('/contact', 'ContactController@get')->name('site.contact');
+Route::post('/contact', 'ContactController@saveContactMessage')->name('site.contact.save');
 
 // Admin routes
 Route::prefix('admin')->namespace('Admin')->as('admin.')->middleware(['auth'])->group(function () {

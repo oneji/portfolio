@@ -22,7 +22,7 @@
 
                     <div class="form-group">
                         <label for="username" class="control-label">Username</label>
-                        <input id="email" class="form-control" type="text" name="email" spellcheck="false" autocomplete="off" data-msg-required="Please enter your username." value="{{ old('email') }}" required autofocus>
+                        <input id="username" class="form-control" type="text" name="username" spellcheck="false" autocomplete="off" data-msg-required="Please enter your username." value="{{ old('username') }}" required autofocus>
                     </div>
                     <div class="form-group">
                         <label for="password" class="control-label">Password</label>

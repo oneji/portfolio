@@ -39,7 +39,7 @@
             <span class="sr-only">Toggle navigation</span>
             <span class="arrow-up"></span>
             <span class="ellipsis ellipsis-vertical">
-              <img class="ellipsis-object" width="32" height="32" src="{{ asset('admin-panel/img/0180441436.jpg') }}" alt="{{ Auth::user()->name }}">
+              <img class="ellipsis-object" width="32" height="32" src="{{ asset('admin-panel/img/0180441436.jpg') }}" alt="User photo">
             </span>
           </button>
         </div>
@@ -58,11 +58,11 @@
             </button>
             <ul class="nav navbar-nav navbar-right">
               <li class="visible-xs-block">
-                <h4 class="navbar-text text-center">Hi, {{ Auth::user()->name }}</h4>
+                <h4 class="navbar-text text-center">Welcome to Admin panel</h4>
               </li>
               <li class="dropdown hidden-xs">
                 <button class="navbar-account-btn" data-toggle="dropdown" aria-haspopup="true">
-                  <img class="circle" width="36" height="36" src="{{ asset('admin-panel/img/0180441436.jpg') }}" alt="{{ Auth::user()->name }}"> {{ Auth::user()->name }}
+                  <img class="circle" width="36" height="36" src="{{ asset('admin-panel/img/0180441436.jpg') }}" alt="User photo">
                   <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu dropdown-menu-right">

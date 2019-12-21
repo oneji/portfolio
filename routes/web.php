@@ -14,7 +14,6 @@
 Auth::routes();
 // Web-site routes
 Route::get('/', 'ResumeController@getResume')->name('site.resume');
-Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/contact', 'ContactController@get')->name('site.contact');
 Route::post('/contact', 'ContactController@saveContactMessage')->name('site.contact.save');
 Route::get('/portfolio', 'PortfolioController@get')->name('site.portfolio');

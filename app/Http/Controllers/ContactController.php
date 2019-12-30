@@ -25,9 +25,6 @@ class ContactController extends Controller
         ]);
 
         $contactMessage = new ContactMessage($request->toArray());
-        // $contactMessage->name = $request->name;
-        // $contactMessage->email = $request->email;
-        // $contactMessage->message = $request->message;
         $contactMessage->save();
 
         // Put the message in session

@@ -70,7 +70,7 @@
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
             <div class="card">
                 <div class="card-header bg-primary">
-                    <strong>Create a new portfolio item</strong>
+                    <strong>Update portfolio item</strong>
                 </div>
                 <div class="card-body">
                     <form class="form" method="POST" action="{{ route('admin.portfolio.edit', [ 'id' => $portfolioItem['id'] ]) }}" data-toggle="validation" enctype="multipart/form-data">

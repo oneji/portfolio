@@ -17,9 +17,9 @@ class CreateExperiencesTable extends Migration
             $table->increments('id');
             $table->integer('start_date');
             $table->integer('finish_date')->nullable();
-            $table->string('occupation');
-            $table->string('company');
-            $table->text('job_description')->nullable();
+            $table->string('occupation_en');
+            $table->string('company_en');
+            $table->text('job_description_en')->nullable();
         });
     }
 

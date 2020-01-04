@@ -36,18 +36,22 @@ class EducationController extends Controller
     {
         $validatedData = $request->validate([
             'start_date' => 'required',
-            'major' => 'required',
-            'study_place' => 'required',
+            'major_en' => 'required',
+            'study_place_en' => 'required',
         ]);
 
         $education = new Education();
         $education->start_date = Carbon::parse($request->start_date);
         $education->finish_date = $request->finish_date === null ? null : Carbon::parse($request->finish_date);
-        $education->major = $request->major;
-        $education->degree = $request->degree;
-        $education->study_place = $request->study_place;
+        $education->major_en = $request->major_en;
+        $education->major_ru = $request->major_ru;
+        $education->degree_en = $request->degree_en;
+        $education->degree_ru = $request->degree_ru;
+        $education->study_place_en = $request->study_place_en;
+        $education->study_place_ru = $request->study_place_ru;
         $education->country_id = $request->country_id;
-        $education->description = $request->description;
+        $education->description_en = $request->description_en;
+        $education->description_ru = $request->description_ru;
         $education->save();
 
         // Put the message in session

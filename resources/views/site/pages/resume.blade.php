@@ -16,19 +16,19 @@
                         
                         <!-- About -->
                         <div class="pb-3">
-                            <h1 class="title title--h1 title__separate">Resume</h1>
+                            <h1 class="title title--h1 title__separate">{{ __('pages.resume') }}</h1>
                         </div>
                         
                         <!-- Education -->
                         <div class="pb-0">
                             <div class="row">
                                 <div class="col-12 col-lg-6">
-                                    <h2 class="title title--h3"><img class="title-icon" src="{{ asset('icons/icon-education.svg') }}" alt="" /> Education</h2>
+                                    <h2 class="title title--h3"><img class="title-icon" src="{{ asset('icons/icon-education.svg') }}" alt="" /> {{ __('headings.education') }}</h2>
                                     <div class="timeline">
                                         <!-- Item -->
                                         @foreach ($education as $educationItem)
                                             <article class="timeline__item">
-                                                <h5 class="title title--h5 timeline__title">{{ $educationItem['study_place'] }}</h5>
+                                                <h5 class="title title--h5 timeline__title">{{ $educationItem['study_place_'.App::getLocale()] }}</h5>
 
                                                 @if ($educationItem['finish_date'] !== null)
                                                     <span class="timeline__period">
@@ -41,19 +41,19 @@
                                                     <span class="timeline__period">{{ Carbon\Carbon::parse($educationItem['start_date'])->toFormattedDateString() .' - Current' }}</span>                                     
                                                 @endif
 
-                                                <p class="timeline__description">{{ $educationItem['description'] }}</p>
+                                                <p class="timeline__description">{{ $educationItem['description_'.App::getLocale()] }}</p>
                                             </article>
                                         @endforeach
                                     </div>
                                 </div>
                                 
                                 <div class="col-12 col-lg-6">
-                                    <h2 class="title title--h3"><img class="title-icon" src="{{ asset('icons/icon-experience.svg') }}" alt="" /> Experience</h2>
+                                    <h2 class="title title--h3"><img class="title-icon" src="{{ asset('icons/icon-experience.svg') }}" alt="" /> {{ __('headings.experience') }}</h2>
                                     <div class="timeline">
                                         <!-- Item -->
                                         @foreach ($experience as $experienceItem)
                                             <article class="timeline__item">
-                                                <h5 class="title title--h5 timeline__title">{{ $experienceItem['occupation'] .', '. $experienceItem['company'] }}</h5>
+                                                <h5 class="title title--h5 timeline__title">{{ $experienceItem['occupation_'.App::getLocale()] .', '. $experienceItem['company_'.App::getLocale()] }}</h5>
 
                                                 @if ($experienceItem['finish_date'] !== null)
                                                     <span class="timeline__period">
@@ -66,7 +66,7 @@
                                                     <span class="timeline__period">{{ Carbon\Carbon::parse($experienceItem['start_date'])->toFormattedDateString() .' - Current' }}</span>                                     
                                                 @endif
 
-                                                <p class="timeline__description">{{ $experienceItem['job_description'] }}</p>
+                                                <p class="timeline__description">{{ $experienceItem['job_description_'.App::getLocale()] }}</p>
                                             </article>
                                         @endforeach
                                     </div>
@@ -79,7 +79,7 @@
                             <div class="row">
                                 
                                 <div class="col-12 col-lg-12 mt-4 mt-lg-0">
-                                    <h2 class="title title--h3">Coding skills</h2>
+                                    <h2 class="title title--h3">{{ __('headings.codingSkills') }}</h2>
                                     <div class="box box__second">
                                         @foreach ($skills as $skill)
                                             <div class="skill-item btn btn--blue-gradient" href="#"></i>{{ $skill['skill_name'] }}</div>

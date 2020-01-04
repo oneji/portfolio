@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Log In &middot; Temur Kamilov Portfolio&middot;</title>
+    <title>Log In &middot; Admin Panel</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
     <meta name="description" content="">
     <meta name="theme-color" content="#ffffff">
@@ -37,7 +37,7 @@
 
         <div class="login-footer">
             <ul class="list-inline">
-                <li>© Temur Kamilov 2019</li>
+                <li>© Portfolio 2019</li>
             </ul>
         </div>
     </div>

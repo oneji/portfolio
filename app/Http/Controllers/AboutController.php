@@ -10,8 +10,7 @@ class AboutController extends Controller
     public function get()
     {
         $about = About::first();
-        return view('site.pages.about', [
-            'about' => $about
-        ]);
+
+        return view('site.pages.about', [ 'about' => $about ]);
     }
 }

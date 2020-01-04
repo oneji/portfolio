@@ -31,16 +31,21 @@ class ExperiencesController extends Controller
     {
         $validatedData = $request->validate([
             'start_date' => 'required',
-            'occupation' => 'required',
-            'company' => 'required',
+            'occupation_en' => 'required',
+            'occupation_ru' => 'required',
+            'company_en' => 'required',
+            'company_ru' => 'required',
         ]);
 
         $experience = new Experience();
         $experience->start_date = Carbon::parse($request->start_date);
         $experience->finish_date = $request->finish_date === null ? null : Carbon::parse($request->finish_date);
-        $experience->occupation = $request->occupation;
-        $experience->company = $request->company;
-        $experience->job_description = $request->job_description;
+        $experience->occupation_en = $request->occupation_en;
+        $experience->occupation_ru = $request->occupation_ru;
+        $experience->company_en = $request->company_en;
+        $experience->company_ru = $request->company_ru;
+        $experience->job_description_en = $request->job_description_en;
+        $experience->job_description_ru = $request->job_description_ru;
         $experience->save();
 
         // Put the message in session

@@ -14,18 +14,23 @@ class About extends Model
      * @var array
      */
     protected $fillable = [
-        'first_name',
-        'last_name',
+        'first_name_en',
+        'first_name_ru',
+        'last_name_en',
+        'last_name_ru',
         'birthday',
-        'residence',
+        'residence_en',
+        'residence_ru',
         'email',
         'phone',
         'skype',
         'wechat',
-        'description',
+        'description_en',
+        'description_ru',
         'photo',
         'cv',
-        'dev_status',
+        'dev_status_en',
+        'dev_status_ru',
         'facebook',
         'linkedin',
         'github'

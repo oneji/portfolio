@@ -3,8 +3,8 @@
     <div class="sidebar box pb-0 sticky-column">
         <img class="avatar avatar--180" src="{{ asset($about['photo']) }}" alt="Photo">
         <div class="text-center">
-            <h3 class="title title--h3 sidebar__user-name"><span class="weight--500">{{ $about['first_name'] }}</span> {{ $about['last_name'] }}</h3>
-            <div class="badge badge--gray">{{ $about['dev_status'] }}</div>
+            <h3 class="title title--h3 sidebar__user-name"><span class="weight--500">{{ $about['first_name_'.App::getLocale()] }}</span> {{ $about['last_name_'.App::getLocale()] }}</h3>
+            <div class="badge badge--gray">{{ $about['dev_status_'.App::getLocale()] }}</div>
             
             <!-- Social -->
             <div class="social">
@@ -16,16 +16,16 @@
         
         <div class="sidebar__info box-inner box-inner--rounded">
             <ul class="contacts-block">
-                <li class="contacts-block__item" data-toggle="tooltip" data-placement="top" title="Birthday">
+                <li class="contacts-block__item" data-toggle="tooltip" data-placement="top" title="{{ __('headings.birthday') }}">
                     <i class="font-icon icon-calendar"></i> {{ $about['birthday'] }}
                 </li>
-                <li class="contacts-block__item" data-toggle="tooltip" data-placement="top" title="Address">
-                    <i class="font-icon icon-location"></i> {{ $about['residence'] }}
+                <li class="contacts-block__item" data-toggle="tooltip" data-placement="top" title="{{ __('headings.address') }}">
+                    <i class="font-icon icon-location"></i> {{ $about['residence_'.App::getLocale()] }}
                 </li>
-                <li class="contacts-block__item" data-toggle="tooltip" data-placement="top" title="E-mail">
+                <li class="contacts-block__item" data-toggle="tooltip" data-placement="top" title="{{ __('headings.email') }}">
                     <a href="mailto:{{ $about['email'] }}"><i class="font-icon icon-envelope"></i>{{ $about['email'] }}</a>
                 </li>
-                <li class="contacts-block__item" data-toggle="tooltip" data-placement="top" title="Phone">
+                <li class="contacts-block__item" data-toggle="tooltip" data-placement="top" title="{{ __('headings.phone') }}">
                     <i class="font-icon icon-phone"></i> {{ $about['phone'] }}
                 </li>
                 <li class="contacts-block__item" data-toggle="tooltip" data-placement="top" title="Skype">
@@ -36,7 +36,7 @@
                 </li>
             </ul>
             @if ($about['cv'] !== null)
-                <a href="{{ $about['cv'] }}" target="_blank" class="btn btn--blue-gradient"><i class="font-icon icon-download"></i> Open CV</a>
+                <a href="{{ $about['cv'] }}" target="_blank" class="btn btn--blue-gradient"><i class="font-icon icon-download"></i> {{ __('headings.openCV') }}</a>
             @endif
         </div>
     </div>	

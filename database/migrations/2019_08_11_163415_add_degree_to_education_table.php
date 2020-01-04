@@ -14,7 +14,7 @@ class AddDegreeToEducationTable extends Migration
     public function up()
     {
         Schema::table('education', function (Blueprint $table) {
-            $table->string('degree')->after('major');
+            $table->string('degree_en')->after('major_en');
         });
     }
 
@@ -26,7 +26,7 @@ class AddDegreeToEducationTable extends Migration
     public function down()
     {
         Schema::table('education', function (Blueprint $table) {
-            $table->dropColumn('degree');
+            $table->dropColumn('degree_en');
         });
     }
 }

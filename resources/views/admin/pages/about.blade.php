@@ -13,7 +13,10 @@
     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
         <div class="card">
             <div class="card-header bg-primary">
-                <strong>Personal information</strong>
+                <strong>Personal information | English</strong>
+                <div class="card-actions">
+                    <button type="button" class="card-action card-toggler" aria-expanded="true" title="Collapse"></button>
+                </div>
             </div>
 
             <div class="card-body">
@@ -38,27 +41,44 @@
                         <div class="contact-form" style="text-align: left">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="first_name">First name</label>
-                                    <input name="first_name" id="first_name" class="form-control" type="text" value="{{ $about['first_name'] }}">
+                                    <label for="first_name_en">First name</label>
+                                    <input name="first_name_en" id="first_name_en" class="form-control" type="text" value="{{ $about['first_name_en'] }}">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="last_name">Last name</label>
-                                    <input name="last_name" id="last_name" class="form-control" type="text" value="{{ $about['last_name'] }}">
+                                    <label for="first_name_ru">Имя</label>
+                                    <input name="first_name_ru" id="first_name_ru" class="form-control" type="text" value="{{ $about['first_name_ru'] }}">
                                 </div>
                             </div>
-                            
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="last_name_en">Last name</label>
+                                    <input name="last_name_en" id="last_name_en" class="form-control" type="text" value="{{ $about['last_name_en'] }}">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="last_name_ru">Фамилия</label>
+                                    <input name="last_name_ru" id="last_name_ru" class="form-control" type="text" value="{{ $about['last_name_ru'] }}">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="residence_en">Residence</label>
+                                    <input name="residence_en" id="residence_en" class="form-control" type="text" value="{{ $about['residence_en'] }}">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="residence_ru">Место проживания</label>
+                                    <input name="residence_ru" id="residence_ru" class="form-control" type="text" value="{{ $about['residence_ru'] }}">
+                                </div>
+                            </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="birthday">Birthday</label>
                                     <input name="birthday" id="birthday" class="form-control" type="text" value="{{ $about['birthday'] }}">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="residence">Residence</label>
-                                    <input name="residence" id="residence" class="form-control" type="text" value="{{ $about['residence'] }}">
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -87,8 +107,14 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="dev_status">Dev status</label>
-                                    <input name="dev_status" id="dev_status" class="form-control" type="text" value="{{ $about['dev_status'] }}">
+                                    <label for="dev_status_en">Dev status</label>
+                                    <input name="dev_status_en" id="dev_status_en" class="form-control" type="text" value="{{ $about['dev_status_en'] }}">
+                                </div>
+                            </div>                            
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="dev_status_ru">Разработчик</label>
+                                    <input name="dev_status_ru" id="dev_status_ru" class="form-control" type="text" value="{{ $about['dev_status_ru'] }}">
                                 </div>
                             </div>                            
                             <div class="col-md-6">
@@ -111,10 +137,16 @@
                             </div>                            
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="description">Description</label>
-                                    <textarea name="description" id="description" class="form-control" rows="5" placeholder="You can briefly introduce yourself here">{{ $about['description'] }}</textarea>
+                                    <label for="description_en">Description</label>
+                                    <textarea name="description_en" id="description_en" class="form-control" rows="5" placeholder="You can briefly introduce yourself here">{{ $about['description_en'] }}</textarea>
                                 </div>
-                            </div>                            
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="description_ru">Краткое описание</label>
+                                    <textarea name="description_ru" id="description_ru" class="form-control" rows="5" placeholder="You can briefly introduce yourself here">{{ $about['description_ru'] }}</textarea>
+                                </div>
+                            </div>
                             
                             <div class="col-md-12">
                                 <div class="form-group">

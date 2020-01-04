@@ -16,8 +16,8 @@
                         
                         <!-- About -->
 						<div class="pb-0 pb-sm-2">
-                            <h1 class="title title--h1 title__separate">About Me</h1>
-                            <p>{{ $about['description'] }}</p>
+                            <h1 class="title title--h1 title__separate">{{ __('pages.about') }}</h1>
+                            <p>{{ $about['description_'.App::getLocale()] }}</p>
                         </div>
                         
                         <!-- What -->

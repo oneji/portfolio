@@ -20,7 +20,7 @@
             </div>
         </div>
     @endif
-    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
         <div class="card">
             <div class="card-header bg-primary">
                 <strong>Current education</strong>
@@ -38,37 +38,41 @@
                             @foreach ($education as $educationItem) 
                                 <div class="timeline-item">
                                     <div class="timeline-segment">
-                                    <div class="timeline-media bg-primary circle sq-24">
-                                        <div class="icon icon-check"></div>
-                                    </div>
+                                        <div class="timeline-media bg-primary circle sq-24">
+                                            <div class="icon icon-check"></div>
+                                        </div>
                                     </div>
                                     <div class="timeline-content">
-                                    <div class="timeline-row">
-                                        <a href="#">{{ $educationItem['study_place'] .', '. $educationItem['country_name'] }}</a>
-                                        @if ($educationItem['finish_date'] !== null)
-                                            <small>
-                                                ({{ 
-                                                    Carbon\Carbon::parse($educationItem['start_date'])->toFormattedDateString() .' - '. 
-                                                    Carbon\Carbon::parse($educationItem['finish_date'])->toFormattedDateString()
-                                                }})
-                                            </small>
-                                        @else
-                                            <small>
-                                                ({{ 
-                                                    Carbon\Carbon::parse($educationItem['start_date'])->toFormattedDateString() .' - Current'
-                                                }})
-                                            </small>                                            
-                                        @endif
-                                    </div>
                                         <div class="timeline-row">
-                                            <p>
-                                                <small>{{ $educationItem['description'] }}</small>
-                                            </p>
+                                            <a href="#">{{ $educationItem['study_place_en'] .', '. $educationItem['country_name'] }}</a>   
+                                        </div>
+                                        <div class="timeline-row">   
+                                            <a href="#">{{ $educationItem['study_place_ru'] .', '. $educationItem['country_name'] }}</a>
+                                        </div>
+                                        <div class="timeline-row">
+                                            <p><small>{{ $educationItem['description_en'] }}</small></p>
+                                            <p><small>{{ $educationItem['description_ru'] }}</small></p>
                                             <p>
                                                 <form method="POST" action="{{ route('admin.education.delete', $educationItem['id']) }}">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button class="btn btn-xs btn-danger" type="submit"><span class="icon icon-trash"></span> Delete</button>
+                                                    <button class="btn btn-xs btn-success" type="button">
+                                                        @if ($educationItem['finish_date'] !== null)
+                                                            <small>
+                                                                {{ 
+                                                                    Carbon\Carbon::parse($educationItem['start_date'])->toFormattedDateString() .' - '. 
+                                                                    Carbon\Carbon::parse($educationItem['finish_date'])->toFormattedDateString()
+                                                                }}
+                                                            </small>
+                                                        @else
+                                                            <small>
+                                                                {{ 
+                                                                    Carbon\Carbon::parse($educationItem['start_date'])->toFormattedDateString() .' - Current'
+                                                                }}
+                                                            </small>                                            
+                                                        @endif
+                                                    </button>
                                                 </form>
                                             </p>
                                         </div>
@@ -82,7 +86,7 @@
         </div>
     </div>
 
-    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
         <div class="card">
             <div class="card-header bg-primary">
                 <strong>Create a new education part</strong>
@@ -105,16 +109,28 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="major">Major</label>
-                        <input name="major" id="major" class="form-control" type="text" required>
+                        <label for="major_en">Major</label>
+                        <input name="major_en" id="major_en" class="form-control" type="text" required>
                     </div>
                     <div class="form-group">
-                        <label for="degree">Degree</label>
-                        <input name="degree" id="degree" class="form-control" type="text">
+                        <label for="major_ru">Специальность</label>
+                        <input name="major_ru" id="major_ru" class="form-control" type="text" required>
                     </div>
                     <div class="form-group">
-                        <label for="study_place">Study place</label>
-                        <input name="study_place" id="study_place" class="form-control" type="text" required>
+                        <label for="degree_en">Degree</label>
+                        <input name="degree_en" id="degree_en" class="form-control" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label for="degree_ru">Степень</label>
+                        <input name="degree_ru" id="degree_ru" class="form-control" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label for="study_place_en">Study place</label>
+                        <input name="study_place_en" id="study_place_en" class="form-control" type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="study_place_ru">Образовательное учреждение</label>
+                        <input name="study_place_ru" id="study_place_ru" class="form-control" type="text" required>
                     </div>
                     <div class="form-group">
                         <label for="countries" class="form-label">Country</label>
@@ -126,8 +142,12 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="description">Description</label>
-                        <textarea name="description" id="description" class="form-control" rows="5" placeholder="You can add a description here"></textarea>
+                        <label for="description_en">Description</label>
+                        <textarea name="description_en" id="description_en" class="form-control" rows="5" placeholder="You can add a description here"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="description_ru">Описание</label>
+                        <textarea name="description_ru" id="description_ru" class="form-control" rows="5" placeholder="You can add a description here"></textarea>
                     </div>
                     <div class="form-group">
                         <button class="btn btn-primary btn-block" type="submit">Create</button>

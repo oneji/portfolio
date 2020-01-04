@@ -16,11 +16,11 @@
                         
                         <!-- About -->
                         <div class="pb-3">
-                            <h1 class="title title--h1 title__separate">Contact</h1>
+                            <h1 class="title title--h1 title__separate">{{ __('pages.contact') }}</h1>
                         </div>
                         
                         <!-- Contact -->
-                        <h2 class="title title--h3">Contact Form</h2>
+                        <h2 class="title title--h3">{{ __('headings.contactForm') }}</h2>
                         
                         @if (Session::has('success'))
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -35,16 +35,16 @@
                             <div class="row">
 				                <div class="form-group col-12 col-md-6">
 									<i class="font-icon icon-user"></i>
-                                    <input type="text" class="input input__icon form-control" id="name" name="name" placeholder="Full name" required="required" autocomplete="on" oninvalid="setCustomValidity('Fill in the field')" onkeyup="setCustomValidity('')">
+                                    <input type="text" class="input input__icon form-control" id="name" name="name" placeholder="{{ __('headings.fullName') }}" required="required" autocomplete="on" oninvalid="setCustomValidity('Fill in the field')" onkeyup="setCustomValidity('')">
 								    <div class="help-block with-errors"></div>
 				                </div>
 				                <div class="form-group col-12 col-md-6">
 									<i class="font-icon icon-envelope"></i>
-                                    <input type="email" class="input input__icon form-control" id="email" name="email" placeholder="Email address" required="required" autocomplete="on" oninvalid="setCustomValidity('Email is incorrect')" onkeyup="setCustomValidity('')">
+                                    <input type="email" class="input input__icon form-control" id="email" name="email" placeholder="{{ __('headings.email') }}" required="required" autocomplete="on" oninvalid="setCustomValidity('Email is incorrect')" onkeyup="setCustomValidity('')">
 								    <div class="help-block with-errors"></div>
 				                </div>
 				                <div class="form-group col-12 col-md-12">
-                                    <textarea class="textarea form-control" id="message" name="message" placeholder="Your Message"  rows="4" required="required" oninvalid="setCustomValidity('Fill in the field')" onkeyup="setCustomValidity('')"></textarea>
+                                    <textarea class="textarea form-control" id="message" name="message" placeholder="{{ __('headings.message') }}"  rows="4" required="required" oninvalid="setCustomValidity('Fill in the field')" onkeyup="setCustomValidity('')"></textarea>
 								    <div class="help-block with-errors"></div>
 				                </div>
 						    </div>
@@ -53,7 +53,7 @@
 					                <div id="validator-contact" class="hidden"></div>
 				                </div>
 				                <div class="col-12 col-md-6 order-1 order-md-2 text-right">
-                                    <button type="submit" class="btn"><i class="font-icon icon-send"></i> Send Message</button>
+                                    <button type="submit" class="btn"><i class="font-icon icon-send"></i> {{ __('headings.sendMessage') }}</button>
 				                </div>
 			                </div>
 		                </form>

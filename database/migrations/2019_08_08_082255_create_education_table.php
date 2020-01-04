@@ -17,9 +17,9 @@ class CreateEducationTable extends Migration
             $table->increments('id');
             $table->date('start_date');
             $table->date('finish_date')->nullable();
-            $table->string('major');
-            $table->string('study_place');
-            $table->text('description')->nullable();
+            $table->string('major_en');
+            $table->string('study_place_en');
+            $table->text('description_en')->nullable();
         });
     }
 

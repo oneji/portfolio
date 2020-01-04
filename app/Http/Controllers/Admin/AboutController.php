@@ -20,8 +20,8 @@ class AboutController extends Controller
     public function save(Request $request)
     {
         $validatedData = $request->validate([
-            'first_name' => 'required',
-            'last_name' => 'required',
+            'first_name_en' => 'required',
+            'last_name_en' => 'required',
         ]);        
 
         $about = About::first();

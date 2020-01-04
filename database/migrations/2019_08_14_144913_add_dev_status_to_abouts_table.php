@@ -14,7 +14,7 @@ class AddDevStatusToAboutsTable extends Migration
     public function up()
     {
         Schema::table('abouts', function (Blueprint $table) {
-            $table->string('dev_status')->nullable();
+            $table->string('dev_status_en')->nullable();
         });
     }
 

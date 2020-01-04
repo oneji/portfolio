@@ -16,7 +16,7 @@
                         
                         <!-- About -->
                         <div class="pb-3">
-                            <h1 class="title title--h1 title__separate">Portfolio</h1>
+                            <h1 class="title title--h1 title__separate">{{ __('pages.portfolio') }}</h1>
                         </div>
                         
                         <!-- News -->

@@ -14,11 +14,11 @@ class AddFieldsToAboutsTable extends Migration
     public function up()
     {
         Schema::table('abouts', function (Blueprint $table) {
-            $table->string('first_name_ru')->nullable()->after('first_name');
-            $table->string('last_name_ru')->nullable()->after('last_name');
-            $table->string('residence_ru')->nullable()->after('residence');
-            $table->text('description_ru')->nullable()->after('description');
-            $table->string('dev_status_ru')->nullable()->after('dev_status');
+            $table->string('first_name_ru')->nullable()->after('first_name_en');
+            $table->string('last_name_ru')->nullable()->after('last_name_en');
+            $table->string('residence_ru')->nullable()->after('residence_en');
+            $table->text('description_ru')->nullable()->after('description_en');
+            $table->string('dev_status_ru')->nullable()->after('dev_status_en');
         });
     }
 

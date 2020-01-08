@@ -12,6 +12,7 @@ class PortfolioController extends Controller
     {
         $portfolioItems = PortfolioItem::all();
         $about = About::first();
+        
         return view('site.pages.portfolio', [
             'about' => $about,
             'portfolioItems' => $portfolioItems

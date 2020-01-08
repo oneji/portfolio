@@ -29,8 +29,8 @@
 										<img class="cover lazyload" src="{{ asset($portfolioItem['cover_image']) }}" alt="" />
 									</div>
 									<div class="news-item__caption">
-										<h2 class="title title--h4">{{ $portfolioItem['title'] }}</h2>
-										<p>{{ $portfolioItem['subtitle'] }}</p>
+										<h2 class="title title--h4">{{ $portfolioItem['title_'.App::getLocale()] }}</h2>
+										<p>{{ $portfolioItem['subtitle_'.App::getLocale()] }}</p>
 									</div>
 								</article>
 							@endforeach

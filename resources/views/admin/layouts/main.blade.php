@@ -162,5 +162,6 @@
     <script src="{{ asset('admin-panel/js/elephant.min.js') }}"></script>
     <script src="{{ asset('admin-panel/js/application.min.js') }}"></script>
     <script src="{{ asset('admin-panel/js/demo.min.js') }}"></script>
+    @yield('scripts')
   </body>
 </html>

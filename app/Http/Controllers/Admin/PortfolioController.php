@@ -17,6 +17,11 @@ class PortfolioController extends Controller
         ]);
     }
 
+    public function create()
+    {
+        return view('admin.pages.portfolio.create'); 
+    }
+
     public function save(Request $request)
     {
         // Upload screenshots
@@ -32,8 +37,8 @@ class PortfolioController extends Controller
         
         // Validate input data
         $validatedData = $request->validate([
-            'title' => 'required',
-            'subtitle' => 'required',
+            'title_en' => 'required',
+            'subtitle_en' => 'required',
         ]);
 
         if($request->hasFile('cover_image')) {            
@@ -45,8 +50,9 @@ class PortfolioController extends Controller
 
         $portfolioItem = new PortfolioItem($request->toArray());
         $portfolioItem->cover_image = env('AWS_URL').'/'.$fileNameToStore;
+        $portfolioItem->screenshots = json_encode($screenshotsNamesToStore);
         
-        $portfolioItem->slug = str_slug($request->title, '-');
+        $portfolioItem->slug = str_slug($request->title_en, '-');
         $portfolioItem->save();
         
         // Put the message in session
@@ -85,8 +91,8 @@ class PortfolioController extends Controller
 
         // Validate input data
         $validatedData = $request->validate([
-            'title' => 'required',
-            'subtitle' => 'required',
+            'title_en' => 'required',
+            'subtitle_en' => 'required',
         ]);
 
         // Upload cover image and delete the old one
@@ -99,12 +105,15 @@ class PortfolioController extends Controller
         }
 
         // Update the item
-        $portfolioItem->title = $request->title;
-        $portfolioItem->subtitle = $request->subtitle;
-        $portfolioItem->description = $request->description;
+        $portfolioItem->title_en = $request->title_en;
+        $portfolioItem->title_ru = $request->title_ru;
+        $portfolioItem->subtitle_en = $request->subtitle_en;
+        $portfolioItem->subtitle_ru = $request->subtitle_ru;
+        $portfolioItem->description_en = $request->description_en;
+        $portfolioItem->description_ru = $request->description_ru;
         $portfolioItem->link = $request->link;
         $portfolioItem->screenshots = json_encode($screenshotsNamesToStore);
-        $portfolioItem->slug = str_slug($request->title, '-');
+        $portfolioItem->slug = str_slug($request->title_en, '-');
         $portfolioItem->save();
         
         // Put the message in session

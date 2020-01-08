@@ -15,10 +15,10 @@ class CreatePortfolioItemsTable extends Migration
     {
         Schema::create('portfolio_items', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title');
-            $table->string('subtitle');
+            $table->string('title_en');
+            $table->string('subtitle_en');
             $table->string('cover_image')->nullable();
-            $table->text('description')->nullable();
+            $table->text('description_en')->nullable();
             $table->string('link')->nullable();
             $table->text('screenshots')->nullable();
         });

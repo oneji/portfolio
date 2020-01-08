@@ -12,11 +12,14 @@ class PortfolioItem extends Model
      * @var array
      */
     protected $fillable = [
-        'title',
-        'subtitle',
+        'title_en',
+        'title_ru',
+        'subtitle_en',
+        'subtitle_ru',
         'link',
         'cover_image',
-        'description'
+        'description_en',
+        'description_ru'
     ];
 
     public $timestamps = false;

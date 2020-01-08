@@ -14,7 +14,7 @@ class AddCountryIdToEducationTable extends Migration
     public function up()
     {
         Schema::table('education', function (Blueprint $table) {
-            $table->integer('country_id')->after('study_place')->unsigned();
+            $table->integer('country_id')->after('study_place_en')->unsigned();
             
             $table->foreign('country_id')->references('id')->on('countries');
         });
